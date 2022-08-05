@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="studio.taikonaut.my_movie_demo">
+    <uses-permision android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
    <application
         android:label="my_movie_demo"
         android:name="${applicationName}"
