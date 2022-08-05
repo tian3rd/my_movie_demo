@@ -6,7 +6,7 @@
 
 Idea is to recommend to users some randomly chosen movies with high IMDB score or RottenTomato freshness, so that the users can add them to their watch list.
 
-<img src="https://cdn-std.droplr.net/files/acc_498334/PvCw74" width="300" alt="homepage demo" style="float:right">
+<img src="https://cdn-std.droplr.net/files/acc_498334/PvCw74" width="200" alt="homepage demo" align="right">
 
 ## Getting Started with Flutter
 
