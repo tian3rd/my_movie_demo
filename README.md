@@ -1,8 +1,14 @@
-# my_movie_demo
+# Movie with Flutter
 
-My Movie App.
+> My Movie App Demo.
 
-## Getting Started
+## Home
+
+Idea is to recommend to users some randomly chosen movies with high IMDB score or RottenTomato freshness, so that the users can add them to their watch list.
+
+<img src="https://cdn-std.droplr.net/files/acc_498334/PvCw74" width="300" alt="homepage demo" style="float:right">
+
+## Getting Started with Flutter
 
 This project is a starting point for a Flutter application.
 
