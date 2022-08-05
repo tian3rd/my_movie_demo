@@ -1,5 +1,9 @@
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+import 'package:image_downloader/image_downloader.dart';
+
 import 'package:flutter/material.dart';
 import 'package:my_movie_demo/demo_theme.dart';
 import 'package:my_movie_demo/screens/screens.dart';
@@ -39,7 +43,33 @@ class _CarouselPageState extends State<CarouselPage> {
         actions: [
           IconButton(
             icon: Icon(Icons.add),
-            onPressed: () {},
+            onPressed: () async {
+              try {
+                // Saved with this method.
+                var imageId = await ImageDownloader.downloadImage(
+                  posters[_posterIndex],
+                );
+                if (imageId == null) {
+                  return;
+                }
+                // Below is a method of obtaining saved image information.
+                var fileName = await ImageDownloader.findName(imageId);
+                var path = await ImageDownloader.findPath(imageId);
+                var size = await ImageDownloader.findByteSize(imageId);
+                var mimeType = await ImageDownloader.findMimeType(imageId);
+                if (kDebugMode) {
+                  print("File info:\n"
+                    "File name: $fileName\n"
+                    "Path: $path\n"
+                    "Size: $size Bytes\n"
+                    "Mime type: $mimeType");
+                }
+              } on PlatformException catch (error) {
+                if (kDebugMode) {
+                  print(error);
+                }
+              }
+            },
           ),
         ],
         title: Text(
