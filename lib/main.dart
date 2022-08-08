@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'demo_theme.dart';
 import 'home.dart';
 
 void main() {
@@ -13,10 +13,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final theme = DemoTheme.dark();
-    return MaterialApp(
+    return const GetMaterialApp(
       title: 'Film Buff',
-      home: const Home(),
+      home: Home(),
     );
   }
 }
