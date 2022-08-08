@@ -1,43 +1,37 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/screens.dart';
-
-import 'demo_theme.dart';
+import 'controllers/bottom_nav_controller.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  int _pageIndex = 0;
-  static List<Widget> pages = <Widget>[
-    CarouselPage(),
-    ProgramPage(),
-    NewsPage(),
-    AccountPage(),
-    ];
+  // global bottom nav controller for different screens
+  final bottomNavController = BottomNavController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   foregroundColor: DemoTheme.dark().appBarTheme.foregroundColor,
-      //   backgroundColor: DemoTheme.dark().appBarTheme.backgroundColor,
-      //   title: Text('Film Buff'),
-      // ),
-      body: pages[_pageIndex],
+      extendBody: true, // combine with nav bar color to make it transparent
+      body: bottomNavController.page,
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _pageIndex,
+        currentIndex: bottomNavController.pageIndex,
         onTap: (int index) {
+          if (kDebugMode) {
+            print('onTap: ${bottomNavController.pageIndex}');
+          }
           setState(() {
-            _pageIndex = index;
+            bottomNavController.onChangePage(index);
           });
         },
         items: [
           BottomNavigationBarItem(
-            backgroundColor: DemoTheme.dark().bottomNavigationBarTheme.selectedItemColor,
+            backgroundColor: bottomNavController.backgroundColor,
             icon: Icon(Icons.home),
             label: 'Home',
           ),
