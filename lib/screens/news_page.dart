@@ -8,8 +8,11 @@ class NewsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Account'),
       ),
-      body: Center(
-        child: Text('Account'),
+      body: Container(
+        color: Colors.green,
+        child: Center(
+          child: Text('Account'),
+        ),
       ),
     );
   }

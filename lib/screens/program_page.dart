@@ -8,8 +8,11 @@ class ProgramPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Program'),
       ),
-      body: Center(
-        child: Text('Program'),
+      body: Container(
+        child: Center(
+          child: Text('Program'),
+        ),
+        color: Colors.purple,
       ),
     );
   }

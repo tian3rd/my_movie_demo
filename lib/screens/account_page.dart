@@ -8,8 +8,11 @@ class AccountPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Account'),
       ),
-      body: Center(
-        child: Text('Account'),
+      body: Container(
+        color: Colors.redAccent,
+        child: Center(
+          child: Text('Account'),
+        ),
       ),
     );
   }
